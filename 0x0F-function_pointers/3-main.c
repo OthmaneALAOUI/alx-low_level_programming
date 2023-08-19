@@ -21,9 +21,9 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	num1 =atoi(argv[1]);
-	num2 =atoi(argv[3]);
+	num1 = atoi(argv[1]);
 	operator = argv[2];
+	num3 = atoi(argv[3]);
 	
 	if (get_po_func(operator) == NULL || operator[1] != '\0')
 	{
@@ -36,6 +36,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(100);
 	}
 
-	printf("%i\n",get_op_func(operator)(num1, num2));
+	printf("%d\n",get_op_func(operator)(num1, num2));
 	return (0);
 }

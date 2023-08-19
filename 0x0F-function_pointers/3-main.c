@@ -14,7 +14,7 @@
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int num1, num2;
-	char operator;
+	char *operator;
 
 	if (argc != 4)
 	{
@@ -30,7 +30,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	if ((operator == '%' && num2 == 0) || (operator == '/' && num2 == 0))
+	if ((*operator == '%' && num2 == 0) || (*operator == '/' && num2 == 0))
 	{
 		printf("Error\n");
 		exit(100);

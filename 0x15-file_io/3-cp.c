@@ -38,7 +38,7 @@ int cpy_file(char *file_from, char *file_to)
 	int fm, t, r, w;
 	char *buf;
 
-	buf = create_buffer(file_to);
+	buf = create_buf(file_to);
 	fm = open(file_from, O_RDONLY);
 	r = read(fm, buf, 1024);
 	t = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -59,7 +59,7 @@ int cpy_file(char *file_from, char *file_to)
 			exit(99);
 		}
 		r = read(fm, buf, 1024);
-		t = open(f_to, O_WRONLY | O_APPEND);
+		t = open(file_to, O_WRONLY | O_APPEND);
 	} while (r > 0);
 	free(buf);
 	cls_file(fm);
